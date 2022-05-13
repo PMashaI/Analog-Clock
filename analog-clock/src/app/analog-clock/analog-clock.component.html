@@ -1,4 +1,4 @@
-<div class="clock">
+<div class="clock" matTooltip="{{currentTime$ | async | date:'mediumTime'}}">
   <div class="point"></div>
   <div *ngFor="let hour of hoursArray" class="hour hour-{{hour}}">
     {{hour}}

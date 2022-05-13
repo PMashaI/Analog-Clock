@@ -14,6 +14,7 @@ const TOTAL_HOURS = 12;
 export class AnalogClockComponent implements OnInit {
   hoursArray: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   destroy$: Subject<void> = new Subject();
+  currentTime$!: Observable<Date>;
   hourDegrees$!: Observable<number>;
   minuteDegrees$!: Observable<number>;
   secondDegrees$!: Observable<number>;
@@ -21,6 +22,10 @@ export class AnalogClockComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.currentTime$ = interval(1000).pipe(
+      map(() => new Date())
+    );
+
     const time$ = interval(1000).pipe(
       takeUntil(this.destroy$),
       map(() => new TimeDate(new Date())),
