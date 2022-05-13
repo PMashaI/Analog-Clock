@@ -3,7 +3,7 @@
   <div *ngFor="let hour of hoursArray" class="hour hour-{{hour}}">
     {{hour}}
   </div>
-  <app-hand-arrow [arrowType]="'minute'" [time]="minutesDegrees"></app-hand-arrow>
-  <app-hand-arrow [arrowType]="'hour'" [time]="hoursDegrees"></app-hand-arrow>
-  <app-hand-arrow [arrowType]="'second'" [time]="secondsDegrees"></app-hand-arrow>
+  <app-hand-arrow [arrowType]="'minute'" [timeDegrees]="minuteDegrees$ | async"></app-hand-arrow>
+  <app-hand-arrow [arrowType]="'hour'" [timeDegrees]="hourDegrees$ | async"></app-hand-arrow>
+  <app-hand-arrow [arrowType]="'second'" [timeDegrees]="secondDegrees$ | async"></app-hand-arrow>
 </div>

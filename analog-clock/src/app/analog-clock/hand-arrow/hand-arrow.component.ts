@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./hand-arrow.component.css']
 })
 export class HandArrowComponent {
-  @Input() arrowType = '';
-  @Input() time = 0;
+  @Input() arrowType: string = '';
+  @Input() timeDegrees: number | null = 0;
 }
